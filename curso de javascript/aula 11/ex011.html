@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De onde você é?</title>
+</head>
+<body>
+    <h1>
+        Seria você um brasileiro?
+    </h1>
+    
+    Escreva de onde você é: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Enviar" onclick="envio()">
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        function envio() {
+            var txtpais = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            var pais = String(txtpais.value)
+            res.innerHTML = `<p>Você é do(a, os) <strong>${pais}</strong></p>`
+            if(pais != 'Brasil') {
+                res.innerHTML = 'Você não é brasileiro!'
+            }
+            else {
+                res.innerHTML = 'Você é brasileiro!'
+            }
+            res.innerHTML += `<p>Seja muito bem vindo!`
+        }
+    </script>
+</body>
+</html>
